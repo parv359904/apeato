@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apeato - Millet Magic</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    body {
+      font-family: 'Fredoka One', cursive;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Luckiest Guy', cursive;
+    }
+
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .nav-link:hover {
+      color: #fff;
+      text-shadow: 0 0 8px #fff;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: white;
+      transition: width 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .combo-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .combo-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .combo-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .combo-card:hover .combo-overlay {
+      transform: translateY(0%);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .fade-delay-1 { animation-delay: 0.2s; }
+    .fade-delay-2 { animation-delay: 0.4s; }
+    .fade-delay-3 { animation-delay: 0.6s; }
+
+    .category-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .category-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Navbar -->
+  <header class="bg-[#F9A825] px-6 py-4 flex flex-col md:flex-row md:justify-between items-center shadow-lg">
+    <div class="flex items-center space-x-3">
+      <img src="apeatologo.png" alt="Apeato Logo" class="h-10 w-auto">
+      <span class="text-white text-sm italic hidden md:inline">Pahad Se Ghar Tak...</span>
+    </div>
+    <nav class="mt-4 md:mt-0 flex flex-wrap gap-x-6 text-sm font-semibold text-white">
+      <a href="#" class="nav-link">Home</a>
+      <div class="relative group">
+        <a href="#" class="nav-link">Shop</a>
+        <div class="absolute hidden group-hover:block bg-white text-black mt-2 rounded shadow-md p-2 text-sm z-10 transition-all duration-300">
+          <a href="#" class="block px-2 py-1 hover:bg-gray-100">Healthy Seeds</a>
+          <a href="#" class="block px-2 py-1 hover:bg-gray-100">Snacks</a>
+          <a href="#" class="block px-2 py-1 hover:bg-gray-100">Combos</a>
+        </div>
+      </div>
+      <a href="#" class="nav-link">About Us</a>
+      <a href="#" class="nav-link">Contact Us</a>
+      <a href="#" class="nav-link">Blogs</a>
+      <div class="relative group">
+        <a href="#" class="nav-link">My Account</a>
+        <div class="absolute hidden group-hover:block bg-white text-black mt-2 rounded shadow-md p-2 text-sm z-10">
+          <a href="#" class="block px-2 py-1 hover:bg-gray-100">Login</a>
+          <a href="#" class="block px-2 py-1 hover:bg-gray-100">Register</a>
+        </div>
+      </div>
+      <a href="#" class="text-xl hover:text-white"><i class="fas fa-shopping-cart"></i></a>
+    </nav>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="w-full px-4 mt-4">
+    <img src="b.png" alt="Hero Banner" class="w-full h-auto rounded-lg shadow-md">
+  </section>
+
+  <!-- Categories -->
+  <section class="px-6 py-10 text-center">
+    <h2 class="text-3xl text-red-400 mb-6">Categories</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="category-card fade-in-up fade-delay-1 bg-[#fdbca5] rounded-lg p-4">
+        <img src="healthyseeds.png" class="mx-auto mb-3 rounded shadow-lg max-h-44 object-contain">
+        <p class="text-left font-bold text-lg">Healthy seeds →</p>
+      </div>
+      <div class="category-card fade-in-up fade-delay-2 bg-[#fdbca5] rounded-lg p-4">
+        <img src="snacks.png" class="mx-auto mb-3 rounded shadow-lg max-h-44 object-contain">
+        <p class="text-left font-bold text-lg">Snacks →</p>
+      </div>
+      <div class="category-card fade-in-up fade-delay-3 bg-[#90e9e9] rounded-lg p-4">
+        <img src="millets.png" class="mx-auto mb-3 rounded shadow-lg max-h-44 object-contain">
+        <p class="text-left font-bold text-lg">Millet premix →</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Healthy Combos -->
+  <section class="px-6 py-10">
+    <h2 class="text-center text-3xl text-[#5B2410] mb-6 uppercase">Healthy Combos</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Combo 1 -->
+      <div class="combo-card bg-[#ccfff6] p-4 rounded-lg shadow-md">
+        <div class="combo-overlay">
+          <button class="border-2 border-green-600 text-green-800 px-6 py-2 rounded-full font-semibold hover:bg-green-100 transition">Add to cart</button>
+        </div>
+        <img src="c1.png" class="mx-auto mb-4 max-h-56 object-contain rounded">
+        <p class="font-bold text-md mb-1 text-left">
+          Apeato Wellness Combo – Flax Seeds, Pumpkin Seeds & Sprouted Ragi Dosa Mix
+        </p>
+        <p class="text-left">₹530.00</p>
+      </div>
+
+      <!-- Combo 2 -->
+      <div class="combo-card bg-[#ccfff6] p-4 rounded-lg shadow-md">
+        <div class="combo-overlay">
+          <button class="border-2 border-green-600 text-green-800 px-6 py-2 rounded-full font-semibold hover:bg-green-100 transition">Add to cart</button>
+        </div>
+        <img src="c2.png" class="mx-auto mb-4 max-h-56 object-contain rounded">
+        <p class="font-bold text-md mb-1 text-left">
+          Apeato Healthy Start Combo – Pancake Mix, Chia Seeds & Sunflower Seeds
+        </p>
+        <p class="text-left">₹530.00</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#F9A825] text-white py-6 text-center text-sm font-semibold">
+    &copy; 2025 Apeato. Bringing Back Tradition, One Millet at a Time!
+  </footer>
+
+</body>
+</html>
