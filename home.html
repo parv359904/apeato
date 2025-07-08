@@ -2,197 +2,735 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Apeato - Millet Magic</title>
+  <title>Apeato - Full Header & Benefits</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
-    body { font-family: 'Fredoka', sans-serif; }
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-scroll {
+      animation: scroll-left 20s linear infinite;
+    }
   </style>
 </head>
-<body class="bg-[#FFF3E5] text-gray-800">
+<body class="m-0 p-0 bg-[#fdf4e3]">
 
-  <!-- Navbar -->
-  <header class="bg-[#FFE600] sticky top-0 z-50 shadow-md rounded-b-xl">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-      <div class="flex items-center space-x-3">
-        <img src="1.png" alt="Apeato Logo" class="w-12 h-12 rounded-full shadow"/>
-        <span class="font-extrabold text-2xl">APEATO</span>
+  <!-- Header Top Bar -->
+  <header class="bg-[#FDBA12] flex items-center justify-between px-8 py-4 shadow-md">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <img src="apeato logo.png" alt="logo" class="h-10 w-auto">
+    </div>
+
+    <!-- Icons and Login -->
+    <div class="flex items-center space-x-6">
+      <i class="fas fa-search text-white text-lg cursor-pointer hover:scale-110 transition-transform"></i>
+      <i class="fas fa-user text-white text-lg cursor-pointer hover:scale-110 transition-transform"></i>
+
+      <div class="relative">
+        <i class="fas fa-lock text-white text-lg cursor-pointer hover:scale-110 transition-transform"></i>
+        <span class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">3</span>
       </div>
-      <nav class="hidden md:flex space-x-8 font-semibold text-base">
-        <a href="#" class="hover:text-red-600 transition">Home</a>
-        <a href="#" class="hover:text-red-600 transition">Product</a>
-        <a href="#" class="hover:text-red-600 transition">About Us</a>
-        <a href="#" class="hover:text-red-600 transition">Contact</a>
-        <a href="#" class="hover:text-red-600 transition">Blog</a>
-      </nav>
-      <button class="ml-4 text-red-600 border border-red-600 px-5 py-1.5 rounded-full font-semibold hover:bg-red-600 hover:text-white transition">Login</button>
+
+      <!-- Login Button -->
+      <button class="bg-white text-[#EF233C] font-semibold px-4 py-2 rounded-full flex items-center space-x-2 hover:shadow-lg hover:scale-105 transition">
+        <i class="fas fa-sign-in-alt"></i>
+        <span>LOGIN</span>
+      </button>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="bg-white px-6 py-20 flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
-    <div class="space-y-6">
-      <h1 class="text-6xl font-extrabold leading-tight">
-        TASTE THE<br>
-        <span class="text-orange-500">GOODNESS</span><br>
-        TODAY
+  <!-- Navigation Menu Bar -->
+  <nav class="bg-[#FDBA12] -mt-1 border-t border-white shadow-sm">
+    <ul class="flex justify-center space-x-12 py-2 text-white font-semibold text-sm tracking-wide">
+      <li class="text-[#EF233C] relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-[#EF233C]">
+        HOME
+      </li>
+      <li class="relative cursor-pointer hover:text-[#EF233C] transition-all duration-200 hover:after:content-[''] hover:after:absolute hover:after:-bottom-1 hover:after:left-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-[#EF233C]">
+        PRODUCT
+      </li>
+      <li class="relative cursor-pointer hover:text-[#EF233C] transition-all duration-200 hover:after:content-[''] hover:after:absolute hover:after:-bottom-1 hover:after:left-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-[#EF233C]">
+        ABOUT US
+      </li>
+      <li class="relative cursor-pointer hover:text-[#EF233C] transition-all duration-200 hover:after:content-[''] hover:after:absolute hover:after:-bottom-1 hover:after:left-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-[#EF233C]">
+        CONTACT
+      </li>
+      <li class="relative cursor-pointer hover:text-[#EF233C] transition-all duration-200 hover:after:content-[''] hover:after:absolute hover:after:-bottom-1 hover:after:left-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-[#EF233C]">
+        BLOG
+      </li>
+    </ul>
+  </nav>
+
+ 
+ 
+
+  <style>
+    /* 🎞️ Background image fade effect */
+    @keyframes fadeSlide {
+      0%, 20% { opacity: 1; z-index: 10; }
+      30%, 100% { opacity: 0; z-index: 0; }
+    }
+
+    .bg-slide {
+      position: absolute;
+      top: 0; right: 0;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      animation: fadeSlide 25s infinite ease-in-out;
+      transition: opacity 1.5s ease-in-out;
+      will-change: opacity;
+    }
+
+    /* 🌀 Foreground center image glide animation */
+    @keyframes glideFloat {
+      0%   { transform: translateX(100%) scale(0.95); opacity: 0; }
+      10%  { opacity: 1; }
+      45%  { transform: translateX(0%) scale(1); opacity: 1; }
+      55%  { transform: translateX(0%) scale(1); opacity: 1; }
+      90%  { opacity: 1; }
+      100% { transform: translateX(-100%) scale(1.05); opacity: 0; }
+    }
+
+    .float-img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      opacity: 0;
+      animation: glideFloat 20s infinite ease-in-out;
+      will-change: transform, opacity;
+    }
+
+    /* ✨ Glow  effect */
+    .glowing-img {
+      filter: drop-shadow(0 4px 15px rgba(255, 0, 102, 0.5));
+      
+      border-radius: 1rem;
+    }
+
+    /* Parallax container structure */
+    .parallax-img {
+      transform: translateZ(0);
+    }
+
+    .parallax-container {
+      perspective: 1000px;
+      transform-style: preserve-3d;
+    }
+
+    /* ♿️ Accessibility - disables animation */
+    @media (prefers-reduced-motion: reduce) {
+      .bg-slide,
+      .float-img {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+
+
+
+  <section class="relative bg-[#FFF1E8] overflow-hidden min-h-[600px] flex flex-col md:flex-row justify-between items-center">
+
+    <!-- LEFT TEXT CONTENT -->
+    <div class="w-full md:w-1/2 px-6 md:px-16 py-20 z-10 flex flex-col justify-center text-center md:text-left">
+      <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight tracking-tight">
+        TASTE THE <br />
+        <span class="text-yellow-500">GOODNESS</span> <br />
+        <span class="text-pink-600">TODAY</span>
       </h1>
-      <p class="text-lg text-gray-600 max-w-md">Delicious, nutritious, and made from 100% millet-based ingredients.</p>
+      <p class="mt-6 text-lg text-gray-700 max-w-md mx-auto md:mx-0">
+        Discover healthy, natural, and delicious millet-based products made just for your lifestyle.
+      </p>
+      <button class="mt-8 bg-pink-600 hover:bg-pink-700 text-white text-lg font-bold py-3 px-8 rounded-full transition shadow-lg">
+        Shop Now
+      </button>
     </div>
-    <img src="2.png" alt="Millet Pack" class="w-full max-w-lg mt-12 lg:mt-0 lg:ml-10" />
+
+    <!-- RIGHT BACKGROUND SLIDES -->
+    <div class="w-full md:w-1/2 h-[600px] relative z-0 overflow-hidden parallax-container">
+      <img src="background 4a.png" class="bg-slide parallax-img" style="animation-delay: 0s;">
+      <img src="background 4b.png" class="bg-slide parallax-img" style="animation-delay: 5s;">
+      <img src="background 4c.png" class="bg-slide parallax-img" style="animation-delay: 10s;">
+      <img src="background 4d.png" class="bg-slide parallax-img" style="animation-delay: 15s;">
+      <img src="background 4e.png" class="bg-slide parallax-img" style="animation-delay: 20s;">
+    </div>
+
+    <!-- CENTER FLOATING FOREGROUND IMAGES -->
+    <div class="rotating-overlay pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-[350px] h-[350px]">
+      <img src="hero section image 4a.png" class="float-img glowing-img" style="animation-delay: 0s;">
+      <img src="hero section image 4b.png" class="float-img glowing-img" style="animation-delay: 4s;">
+      <img src="hero section image 4c.png" class="float-img glowing-img" style="animation-delay: 8s;">
+      <img src="hero section image 4d.png" class="float-img glowing-img" style="animation-delay: 12s;">
+      <img src="hero section image 4e.png" class="float-img glowing-img" style="animation-delay: 16s;">
+    </div>
   </section>
 
-  <!-- USP Icons Bar -->
-  <div class="bg-white py-10 px-4 max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
-    <div class="bg-white rounded-xl p-4 shadow hover:shadow-lg">
-      <img src="3.png" class="mx-auto w-12 mb-2"/>
-      <p class="font-medium">No Colours</p>
+
+
+
+   <!-- Add inside your <head> -->
+<style>
+  .scroll-strip {
+    background-color: #ec4899; /* pink-500 */
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .scroll-strip .banner {
+    display: inline-block;
+    animation: scroll-left 20s linear infinite;
+  }
+
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .scroll-strip img {
+    height: 50px; /* Adjust as needed */
+  }
+</style>
+
+
+<!-- Place this where you want the banner -->
+<div class="scroll-strip">
+  <div class="banner">
+    <img src="moving word.png" alt="Scrolling Banner" class="inline-block">
+    <img src="moving word.png" alt="Scrolling Banner" class="inline-block">
+  </div>
+</div>
+
+
+  <!-- Content section with logo and benefits -->
+  <section class="px-8 py-10 bg-[#fdf4e3]">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-8">
+      
+      <!-- Logo & tagline -->
+      <div class="text-center lg:text-left">
+        <img src="apeato logo 2.png" alt="Apeato Logo" class="mx-auto lg:mx-0 w-40 mb-2">
+      </div>
+
+      <!-- Features row -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+        <div>
+          <img src="delivery icon.png" alt="Free Shipping" class="mx-auto w-10 mb-2">
+          <p class="text-gray-600 font-semibold">FREE SHIPPING</p>
+          <p class="text-black font-bold text-sm">STARTING FROM ₹499</p>
+        </div>
+        <div>
+          <img src="cash back icon.png" alt="Money Back" class="mx-auto w-10 mb-2">
+          <p class="text-gray-600 font-semibold">100% MONEY BACK</p>
+        </div>
+        <div>
+          <img src="customer care icon.png" alt="Support" class="mx-auto w-10 mb-2">
+          <p class="text-gray-600 font-semibold">SUPPORT 24/7</p>
+        </div>
+      </div>
     </div>
-    <div class="bg-white rounded-xl p-4 shadow hover:shadow-lg">
-      <img src="4.png" class="mx-auto w-12 mb-2"/>
-      <p class="font-medium">No Preservatives</p>
+    <hr class="border-t border-gray-300 mt-10">
+  </section>
+
+ <!-- Enhanced Categories Section -->
+<section class="bg-[#fdf4e3] py-10 px-5">
+  
+    <h2 class="text-3xl font-bold text-black mb-10 text-left px-5">CATEGORIES</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    
+    <!-- Card 1: Millet Premix -->
+    <div class="group bg-[#fff0f0] rounded-3xl text-center p-6 shadow-md hover:shadow-2xl hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-0 group-hover:opacity-30 transition duration-300 bg-gradient-to-br from-yellow-300 to-pink-400 rounded-3xl z-0"></div>
+      <div class="relative z-10">
+        <div class="relative w-full flex justify-center">
+          <img src="bg-leaf1.png" alt="Leaf Background" class="absolute top-1/2 -translate-y-1/2 w-32 opacity-40 z-0">
+          <img src="categories image 4a.png" alt="Millet Dosa" class="relative z-10 w-40 transition-transform duration-300 group-hover:scale-110">
+        </div>
+        <h3 class="mt-4 font-bold text-black">MILLET PREMIX</h3>
+        <button class="mt-4 bg-[#FDBA12] text-white font-semibold py-2 px-6 rounded-full hover:scale-105 hover:shadow-md transition">Let's Explore!</button>
+      </div>
     </div>
-    <div class="bg-white rounded-xl p-4 shadow hover:shadow-lg">
-      <img src="5.png" class="mx-auto w-12 mb-2"/>
-      <p class="font-medium">100% Natural</p>
+
+    <!-- Card 2: Healthy Seeds -->
+    <div class="group bg-[#fff8f0] rounded-3xl text-center p-6 shadow-md hover:shadow-2xl hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-0 group-hover:opacity-30 transition duration-300 bg-gradient-to-br from-green-300 to-yellow-200 rounded-3xl z-0"></div>
+      <div class="relative z-10">
+        <div class="relative w-full flex justify-center">
+          <img src="bg-circle1.png" alt="Circle Background" class="absolute top-1/2 -translate-y-1/2 w-32 opacity-40 z-0">
+          <img src="categories image 4b.png" alt="Sunflower Seeds" class="relative z-10 w-40 transition-transform duration-300 group-hover:scale-110">
+        </div>
+        <h3 class="mt-4 font-bold text-black">HEALTHY SEEDS</h3>
+        <button class="mt-4 bg-[#FDBA12] text-white font-semibold py-2 px-6 rounded-full hover:scale-105 hover:shadow-md transition">Let's Explore!</button>
+      </div>
     </div>
-    <div class="bg-white rounded-xl p-4 shadow hover:shadow-lg">
-      <img src="6.png" class="mx-auto w-12 mb-2"/>
-      <p class="font-medium">No Sugar</p>
+
+    <!-- Card 3: Snacks -->
+    <div class="group bg-[#ffeef0] rounded-3xl text-center p-6 shadow-md hover:shadow-2xl hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-0 group-hover:opacity-30 transition duration-300 bg-gradient-to-br from-pink-300 to-orange-200 rounded-3xl z-0"></div>
+      <div class="relative z-10">
+        <div class="relative w-full flex justify-center">
+          <img src="bg-blocks1.png" alt="Shape Background" class="absolute top-1/2 -translate-y-1/2 w-32 opacity-40 z-0">
+          <img src="categories image 4c.png" alt="Whizz Chips" class="relative z-10 w-40 transition-transform duration-300 group-hover:scale-110">
+        </div>
+        <h3 class="mt-4 font-bold text-black">SNACKS</h3>
+        <button class="mt-4 bg-[#FDBA12] text-white font-semibold py-2 px-6 rounded-full hover:scale-105 hover:shadow-md transition">Let's Explore!</button>
+      </div>
     </div>
-    <div class="bg-white rounded-xl p-4 shadow hover:shadow-lg">
-      <img src="7.png" class="mx-auto w-12 mb-2"/>
-      <p class="font-medium">Gluten Free</p>
+
+  </div>
+</section>
+
+<!-- Enhanced Healthy Combos Section -->
+<section class="bg-[#fdf4e3] py-4 px-8">
+  <h2 class="text-3xl font-bold text-black mb-10 text-left px-5">HEALTHY COMBOS</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+    <!-- Combo Card 1 -->
+    <div class="group bg-[#ffeef0] rounded-3xl p-6 shadow-md hover:shadow-2xl hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+      <span class="absolute top-4 right-4 bg-white text-black text-xs font-bold px-2 py-1 rounded-full shadow-sm z-10">Save ₹30</span>
+      <div class="absolute inset-0 opacity-0 group-hover:opacity-30 bg-gradient-to-br from-pink-300 to-yellow-200 rounded-3xl transition duration-300 z-0"></div>
+      <div class="relative z-10">
+        <div class="flex justify-center mb-4">
+          <img src="combo image 4a.png" alt="Combo 1" class="w-40 drop-shadow-md transition-transform duration-300 group-hover:scale-110">
+        </div>
+        <h3 class="font-semibold text-lg text-black">Apeato Wellness Combo</h3>
+        <p class="text-gray-400 line-through text-sm">Rs.560</p>
+        <p class="text-black font-semibold mb-1">Rs.530</p>
+        <p class="text-sm text-gray-600">Flax Seeds, Pumpkin Seeds & Sprouted Ragi Dosa Mix</p>
+        <button class="mt-4 w-full bg-[#FDBA12] text-white font-semibold py-2 rounded-full hover:scale-105 hover:shadow-md transition">Add To Cart</button>
+      </div>
+    </div>
+
+    <!-- Combo Card 2 -->
+    <div class="group bg-[#fff6f0] rounded-3xl p-6 shadow-md hover:shadow-2xl hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+      <span class="absolute top-4 right-4 bg-white text-black text-xs font-bold px-2 py-1 rounded-full shadow-sm z-10">12% Off</span>
+      <div class="absolute inset-0 opacity-0 group-hover:opacity-30 bg-gradient-to-br from-yellow-300 to-pink-400 rounded-3xl transition duration-300 z-0"></div>
+      <div class="relative z-10">
+        <div class="flex justify-center mb-4">
+          <img src="combo image 4b.png" alt="Combo 2" class="w-40 drop-shadow-md transition-transform duration-300 group-hover:scale-110">
+        </div>
+        <h3 class="font-semibold text-lg text-black">Apeato Healthy Start Combo</h3>
+        <p class="text-gray-400 line-through text-sm">Rs.560</p>
+        <p class="text-black font-semibold mb-1">Rs.530</p>
+        <p class="text-sm text-gray-600">Pancake Mix, Chia Seeds & Sunflower Seeds</p>
+        <button class="mt-4 w-full bg-[#FDBA12] text-white font-semibold py-2 rounded-full hover:scale-105 hover:shadow-md transition">Add To Cart</button>
+      </div>
+    </div>
+
+    <!-- Combo Card 3 -->
+    <div class="group bg-[#fff0f0] rounded-3xl p-6 shadow-md hover:shadow-2xl hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-0 group-hover:opacity-30 bg-gradient-to-br from-pink-200 to-orange-200 rounded-3xl transition duration-300 z-0"></div>
+      <div class="relative z-10">
+        <div class="flex justify-center mb-4">
+          <img src="combo image 4c.png" alt="Combo 3" class="w-40 drop-shadow-md transition-transform duration-300 group-hover:scale-110">
+        </div>
+        <h3 class="font-semibold text-lg text-black">Apeato Super Seeds Combo</h3>
+        <p class="text-black font-semibold mb-1">Rs.660</p>
+        <p class="text-sm text-gray-600">Flax Seeds, Chia Seeds, Pumpkin Seeds</p>
+        <button class="mt-4 w-full bg-[#FDBA12] text-white font-semibold py-2 rounded-full hover:scale-105 hover:shadow-md transition">Add To Cart</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="bg-[#fdf4e3] py-16 px-4 md:px-8">
+  <div class="max-w-7xl mx-auto text-center">
+    <!-- Title -->
+    <h2 class="text-4xl md:text-5xl font-extrabold text-black mb-4 tracking-wide">TESTIMONIAL</h2>
+    <p class="text-xl md:text-2xl font-bold text-black mb-1">“What Our Clients Say”</p>
+    <p class="text-base md:text-lg font-medium text-gray-800 mb-12">real Feedback From The People Who Matter Most – Our User And Partners</p>
+
+    <!-- Top row -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center mb-16">
+      
+      <!-- Left Card -->
+      <div class="bg-[#ffe9eb] px-6 py-6 rounded-xl text-left shadow-md h-full">
+        <div class="flex items-start gap-4">
+          <img src="Ramesh K., Hyderabad - testimonial.png" alt="Ramesh K." class="w-20 h-20 rounded-full object-cover shrink-0">
+          <p class="text-base text-gray-900 leading-relaxed">
+            “Apeato’s Products Have Completely Changed My Breakfast Routine. Their Quality Is Unmatched, And I Feel More Energetic Throughout The Day.”
+          </p>
+        </div>
+        <p class="text-black font-extrabold mt-4 text-right">— Ramesh K., Hyderabad</p>
+      </div>
+
+      <!-- Center Image -->
+      <div class="flex justify-center">
+        <img src="testimonal pic 1.png" alt="Award" class="rounded-xl shadow-lg w-full max-w-sm">
+      </div>
+
+      <!-- Right Card -->
+      <div class="bg-[#ffe9eb] px-6 py-6 rounded-xl text-left shadow-md h-full">
+        <div class="flex items-start gap-4">
+          <img src="Anjali S., Mumbai -testimonial.png" alt="Anjali S." class="w-20 h-20 rounded-full object-cover shrink-0">
+          <p class="text-base text-gray-900 leading-relaxed">
+            “I Never Thought Healthy Could Taste This Good! The Millet Mixture Is Now My Go-To Snack — Light, Filling, And Absolutely Delicious.”
+          </p>
+        </div>
+        <p class="text-black font-extrabold mt-4 text-right">— Anjali S., Mumbai</p>
+      </div>
+
+    </div>
+
+    <!-- Bottom row -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      
+      <!-- Group Image -->
+      <div class="flex justify-center">
+        <img src="testimonal pic 2.png" alt="Group" class="rounded-xl shadow-lg w-full max-w-sm"">
+      </div>
+
+      <!-- Bottom Card -->
+      <div class="bg-[#ffe9eb] px-6 py-6 rounded-xl text-left shadow-md">
+        <div class="flex items-start gap-4">
+          <img src="Fatima M., Bengaluru - testimonial.png" alt="Fatima M." class="w-20 h-20 rounded-full object-cover shrink-0">
+          <p class="text-base text-gray-900 leading-relaxed">
+            “My Kids Love The Ragi Pahadi Hot Tadka Chips! It’s A Relief To Find A Snack That’s Both Nutritious And Tasty. Highly Recommended For Every Household.”
+          </p>
+        </div>
+        <p class="text-black font-extrabold mt-4 text-right">— Fatima M., Bengaluru</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="bg-[#fdf4e3] py-16 px-4 md:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Heading (Consistent style with Healthy Combos) -->
+    <h2 class="text-2xl md:text-3xl font-bold text-black mb-10 text-left px-2 tracking-wide">ALL PRODUCTS</h2>
+
+    <!-- Product Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+
+      <!-- Product Card 1 -->
+      <div class="bg-[#ffe9eb] rounded-3xl overflow-hidden shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 group">
+        <img src="product image 4a.png" alt="Millet Dosa"
+             class="w-full h-64 object-contain bg-white transition-transform duration-300 group-hover:scale-110">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold text-gray-900 mb-1 leading-snug">Sprouted Ragi Wala<br>Millet Dosa -150g</h3>
+          <p class="text-black font-bold">Rs. 200.00</p>
+          <p class="text-xs text-gray-600 mb-4">Inclusive Of All Taxes</p>
+          <button class="w-full bg-[#f6a700] text-white font-semibold py-2 rounded-full transition duration-300 hover:bg-black">Add To Cart</button>
+        </div>
+      </div>
+
+      <!-- Product Card 2 -->
+      <div class="bg-[#ffe9eb] rounded-3xl overflow-hidden shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 group">
+        <img src="product image 4b.png" alt="Pancake Mix"
+             class="w-full h-64 object-contain bg-white transition-transform duration-300 group-hover:scale-110">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold text-gray-900 mb-1 leading-snug">Multi Millet Pancake Mix<br>-150g</h3>
+          <p class="text-black font-bold">Rs. 200.00</p>
+          <p class="text-xs text-gray-600 mb-4">Inclusive Of All Taxes</p>
+          <button class="w-full bg-[#f6a700] text-white font-semibold py-2 rounded-full transition duration-300 hover:bg-black">Add To Cart</button>
+        </div>
+      </div>
+
+      <!-- Product Card 3 -->
+      <div class="bg-[#ffe9eb] rounded-3xl overflow-hidden shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 group">
+        <img src="product image 4c.png" alt="Sunflower Seeds"
+             class="w-full h-64 object-contain bg-white transition-transform duration-300 group-hover:scale-110">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold text-gray-900 mb-1 leading-snug">Sunflower Seeds<br>-150g</h3>
+          <p class="text-black font-bold">Rs. 180.00</p>
+          <p class="text-xs text-gray-600 mb-4">Inclusive Of All Taxes</p>
+          <button class="w-full bg-[#f6a700] text-white font-semibold py-2 rounded-full transition duration-300 hover:bg-black">Add To Cart</button>
+        </div>
+      </div>
+
+      <!-- Product Card 4 -->
+      <div class="bg-[#ffe9eb] rounded-3xl overflow-hidden shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 group">
+        <img src="product image 4d.png" alt="Pumpkin Seeds"
+             class="w-full h-64 object-contain bg-white transition-transform duration-300 group-hover:scale-110">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold text-gray-900 mb-1 leading-snug">Pumpkin Seeds<br>-150g</h3>
+          <p class="text-black font-bold">Rs. 180.00</p>
+          <p class="text-xs text-gray-600 mb-4">Inclusive Of All Taxes</p>
+          <button class="w-full bg-[#f6a700] text-white font-semibold py-2 rounded-full transition duration-300 hover:bg-black">Add To Cart</button>
+        </div>
+      </div>
+
+      <!-- Product Card 5 -->
+      <div class="bg-[#ffe9eb] rounded-3xl overflow-hidden shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 group">
+        <img src="product image 4e.png" alt="Chia Seeds"
+             class="w-full h-64 object-contain bg-white transition-transform duration-300 group-hover:scale-110">
+        <div class="p-4 text-center">
+          <h3 class="font-semibold text-gray-900 mb-1 leading-snug">Chia Seeds<br>-150g</h3>
+          <p class="text-black font-bold">Rs. 150.00</p>
+          <p class="text-xs text-gray-600 mb-4">Inclusive Of All Taxes</p>
+          <button class="w-full bg-[#f6a700] text-white font-semibold py-2 rounded-full transition duration-300 hover:bg-black">Add To Cart</button>
+        </div>
+      </div>
+
+      <!-- Final Promo Card -->
+      <div class="bg-[#ffe4ec] rounded-3xl p-4 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+        <div class="bg-[#ffd9e3] rounded-2xl px-6 py-12 h-full flex flex-col justify-between text-center">
+          <div>
+            <h3 class="text-base font-bold uppercase text-black mb-4">All Products</h3>
+            <p class="text-sm text-black font-normal leading-snug mb-8">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <button class="mx-auto border-2 border-black text-black font-semibold text-sm px-8 py-3 rounded-full hover:bg-black hover:text-white transition-all duration-300">
+            VIEW ALL
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- BLOGS SECTION -->
+<section class="bg-[#FFF8EF] px-6 md:px-16 py-16">
+  <!-- Heading -->
+  <h2 class="text-3xl md:text-4xl font-extrabold text-black mb-12">BLOGS</h2>
+
+  <!-- Blog Cards Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+    
+    <!-- Blog Card -->
+    <div class="bg-[#ffeeef] p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 hover:shadow-xl">
+      <h3 class="font-bold text-black mb-2 leading-tight">Growing Health Issues In Youth !</h3>
+      <p class="text-orange-500 font-semibold text-sm mb-2">April 27, 2025</p>
+      <p class="text-sm text-gray-800 mb-6">
+        Growing Health Issues In The Youth! Let’s Take A Moment To Talk About Something We Usually Ignore — The Health Problems Young People Are Facing Today...
+      </p>
+      <button class="w-full text-orange-500 font-semibold border-2 border-orange-400 rounded-full py-2 transition hover:bg-orange-500 hover:text-white">Read More</button>
+    </div>
+
+    <!-- Blog Card -->
+    <div class="bg-[#ffeeef] p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 hover:shadow-xl">
+      <h3 class="font-bold text-black mb-2 leading-tight">Pcod And Pcos – And How The Natality Works</h3>
+      <p class="text-orange-500 font-semibold text-sm mb-2">April 23, 2025</p>
+      <p class="text-sm text-gray-800 mb-6">
+        PCOD and PCOS are becoming more usual conditions in women across the globe. Both conditions...
+      </p>
+      <button class="w-full text-orange-500 font-semibold border-2 border-orange-400 rounded-full py-2 transition hover:bg-orange-500 hover:text-white">Read More</button>
+    </div>
+
+    <!-- Blog Card -->
+    <div class="bg-[#ffeeef] p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 hover:shadow-xl">
+      <h3 class="font-bold text-black mb-2 leading-tight">Get Ready For A Health Revolution: The Complete Guide To Why Millets</h3>
+      <p class="text-orange-500 font-semibold text-sm mb-2">April 20, 2025</p>
+      <p class="text-sm text-gray-800 mb-6">
+        Restoring the traditional millet crop — do you know what our grandparents used to eat? They also ate millets...
+      </p>
+      <button class="w-full text-orange-500 font-semibold border-2 border-orange-400 rounded-full py-2 transition hover:bg-orange-500 hover:text-white">Read More</button>
+    </div>
+
+    <!-- Blog Card -->
+    <div class="bg-[#ffeeef] p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 hover:shadow-xl">
+      <h3 class="font-bold text-black mb-2 leading-tight">Transform Your Health: Amazing Benefits Of Switching To Nutritious Millet Snacks!</h3>
+      <p class="text-orange-500 font-semibold text-sm mb-2">April 27, 2025</p>
+      <p class="text-sm text-gray-800 mb-6">
+        Why we should shift to healthy snacks? Chips, chocolates and biscuits vs nutritious millet snacks...
+      </p>
+      <button class="w-full text-orange-500 font-semibold border-2 border-orange-400 rounded-full py-2 transition hover:bg-orange-500 hover:text-white">Read More</button>
     </div>
   </div>
 
-  <!-- Healthy Combo Section -->
-  <section class="py-16 px-6 max-w-7xl mx-auto">
-    <h2 class="text-4xl font-bold mb-8 text-center">Healthy Combos</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <div class="bg-white shadow-lg rounded-2xl p-6 hover:scale-105 transition">
-        <img src="8.png" class="w-full rounded-xl mb-4"/>
-        <h3 class="text-xl font-bold mb-2">Combo Pack A</h3>
-        <p class="text-sm text-gray-600">A perfect mix of snacks for your daily health boost.</p>
-      </div>
-      <div class="bg-white shadow-lg rounded-2xl p-6 hover:scale-105 transition">
-        <img src="9.png" class="w-full rounded-xl mb-4"/>
-        <h3 class="text-xl font-bold mb-2">Combo Pack B</h3>
-        <p class="text-sm text-gray-600">All-time favourite millet-based snack box.</p>
-      </div>
-      <div class="bg-white shadow-lg rounded-2xl p-6 hover:scale-105 transition">
-        <img src="10.png" class="w-full rounded-xl mb-4"/>
-        <h3 class="text-xl font-bold mb-2">Combo Pack C</h3>
-        <p class="text-sm text-gray-600">Tasty + Healthy = Apeato goodness!</p>
+  <!-- Center Learn More Button -->
+  <div class="flex justify-center">
+    <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md">
+      Learn More
+    </button>
+  </div>
+</section>
+
+
+
+
+<!-- FAQ SECTION -->
+<section class="bg-[#fdeef2] px-6 md:px-16 py-16">
+  <div class="text-center mb-8">
+    <h2 class="text-3xl font-bold text-black mb-2">Got Questions? We Have Answers!</h2>
+    <p class="text-gray-800 font-medium max-w-2xl mx-auto">
+      “Find answers to common questions about Apeato’s products, ingredients, and health benefits.”
+    </p>
+  </div>
+
+  <!-- Centered Image -->
+  <div class="flex justify-center mb-10">
+    <img src="image A.png" alt="Millet Dish" class="w-64 rounded-lg shadow-md" />
+  </div>
+
+  <!-- FAQ Accordion -->
+  <div class="max-w-3xl mx-auto space-y-4" id="faqAccordion">
+
+    <!-- FAQ Item Template -->
+    <div class="faq-item bg-white rounded-2xl shadow-md border-2 border-black p-4 transition-all duration-300">
+      <button class="w-full flex justify-between items-center font-semibold text-left text-md text-black toggle-btn">
+        <span>What Are The Health Benefits Of Millet-Based Products?</span>
+        <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div class="faq-content mt-4 text-sm text-gray-700">
+        Millets are rich in fiber, protein, and essential nutrients. They help support digestion, heart health, manage blood sugar levels, and are naturally gluten-free, making them ideal for those with gluten sensitivity.
       </div>
     </div>
-  </section>
 
-  <!-- More content (products, blog, FAQ, footer) would follow similarly with Figma styles -->
-  <!-- Product Grid Section -->
-  <section class="py-16 px-6 max-w-7xl mx-auto">
-    <h2 class="text-4xl font-bold mb-10 text-center">Our Products</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-      <div class="bg-white rounded-2xl shadow hover:shadow-xl p-4 text-center">
-        <img src="11.png" class="w-32 h-32 mx-auto mb-4" />
-        <h3 class="text-lg font-semibold mb-1">Ragi Chips</h3>
-        <p class="text-sm text-gray-600 mb-2">Crunchy & Healthy.</p>
-        <span class="text-orange-500 font-bold text-lg">₹99</span>
-      </div>
-      <div class="bg-white rounded-2xl shadow hover:shadow-xl p-4 text-center">
-        <img src="12.png" class="w-32 h-32 mx-auto mb-4" />
-        <h3 class="text-lg font-semibold mb-1">Millet Bars</h3>
-        <p class="text-sm text-gray-600 mb-2">Great for quick energy!</p>
-        <span class="text-orange-500 font-bold text-lg">₹149</span>
-      </div>
-      <div class="bg-white rounded-2xl shadow hover:shadow-xl p-4 text-center">
-        <img src="13.png" class="w-32 h-32 mx-auto mb-4" />
-        <h3 class="text-lg font-semibold mb-1">Breakfast Mix</h3>
-        <p class="text-sm text-gray-600 mb-2">Start your day right.</p>
-        <span class="text-orange-500 font-bold text-lg">₹199</span>
+    <div class="faq-item bg-white rounded-2xl shadow-md border-2 border-black p-4 transition-all duration-300">
+      <button class="w-full flex justify-between items-center font-semibold text-left text-md text-black toggle-btn">
+        <span>Are Apeato Products Organic?</span>
+        <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div class="faq-content mt-4 text-sm text-gray-700 hidden">
+        Yes. We carefully source our ingredients from organic farms where no harmful pesticides, synthetic chemicals, or GMOs are used. Apeato is committed to quality and natural wellness.
       </div>
     </div>
-  </section>
 
-  <!-- Blog Preview Section -->
-  <section class="py-16 px-6 bg-white">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-4xl font-bold mb-10 text-center">From Our Blog</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-[#FFF3E5] rounded-xl shadow p-4 hover:shadow-lg transition">
-          <img src="14.png" class="w-full h-48 object-cover rounded-md mb-4"/>
-          <span class="text-sm text-orange-600 font-semibold uppercase">Nutrition</span>
-          <h3 class="text-xl font-bold mt-2 mb-2">5 Benefits of Millet You Didn't Know</h3>
-          <p class="text-sm text-gray-600">Discover why millet is a superfood your body loves.</p>
-        </div>
-        <div class="bg-[#FFF3E5] rounded-xl shadow p-4 hover:shadow-lg transition">
-          <img src="15.png" class="w-full h-48 object-cover rounded-md mb-4"/>
-          <span class="text-sm text-orange-600 font-semibold uppercase">Lifestyle</span>
-          <h3 class="text-xl font-bold mt-2 mb-2">Healthy Snacking with Apeato</h3>
-          <p class="text-sm text-gray-600">Swap junk for millet-based snacks today!</p>
-        </div>
-        <div class="bg-[#FFF3E5] rounded-xl shadow p-4 hover:shadow-lg transition">
-          <img src="16.png" class="w-full h-48 object-cover rounded-md mb-4"/>
-          <span class="text-sm text-orange-600 font-semibold uppercase">Fitness</span>
-          <h3 class="text-xl font-bold mt-2 mb-2">Fuel Workouts the Natural Way</h3>
-          <p class="text-sm text-gray-600">Stay fit with all-natural millet nutrition.</p>
-        </div>
+    <div class="faq-item bg-white rounded-2xl shadow-md border-2 border-black p-4 transition-all duration-300">
+      <button class="w-full flex justify-between items-center font-semibold text-left text-md text-black toggle-btn">
+        <span>How Can I Incorporate Apeato's Millet Products Into My Diet?</span>
+        <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div class="faq-content mt-4 text-sm text-gray-700 hidden">
+        Our millet-based dosa mix, pancake mix, and snack combos can be easily added to your breakfast, lunch, or snacks. Simply follow the instructions on the pack — no hassle, no compromise on taste!
       </div>
     </div>
-  </section>
 
-  <!-- FAQ Section -->
-  <section class="py-16 px-6 max-w-4xl mx-auto">
-    <h2 class="text-4xl font-bold mb-10 text-center">FAQs</h2>
-    <div class="space-y-4">
-      <details class="bg-white shadow p-4 rounded-xl cursor-pointer">
-        <summary class="font-semibold text-lg">What is millet?</summary>
-        <p class="mt-2 text-gray-600 text-sm">Millet is a highly nutritious, gluten-free grain packed with fiber, protein, and essential minerals.</p>
-      </details>
-      <details class="bg-white shadow p-4 rounded-xl cursor-pointer">
-        <summary class="font-semibold text-lg">Is Apeato suitable for kids?</summary>
-        <p class="mt-2 text-gray-600 text-sm">Absolutely! Our snacks are safe, natural, and designed for all ages.</p>
-      </details>
-      <details class="bg-white shadow p-4 rounded-xl cursor-pointer">
-        <summary class="font-semibold text-lg">Do you deliver across India?</summary>
-        <p class="mt-2 text-gray-600 text-sm">Yes, we deliver PAN India with fast and secure shipping.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-[#FFE600] py-10 px-6 mt-12">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div>
-        <div class="flex items-center space-x-3 mb-4">
-          <img src="1.png" class="w-10 h-10 rounded-full" />
-          <span class="text-xl font-extrabold">APEATO</span>
-        </div>
-        <p class="text-sm text-gray-700">Millet magic for every lifestyle. Nourish naturally.</p>
-      </div>
-      <div>
-        <h4 class="font-bold mb-3">Quick Links</h4>
-        <ul class="space-y-2 text-sm text-gray-800">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-bold mb-3">Contact Us</h4>
-        <p class="text-sm text-gray-800">Email: support@apeato.in</p>
-        <p class="text-sm text-gray-800">Phone: +91 98765 43210</p>
-        <div class="flex space-x-4 mt-4">
-          <img src="17.png" class="w-6 h-6" alt="Facebook" />
-          <img src="17.png" class="w-6 h-6" alt="Instagram" />
-          <img src="17.png" class="w-6 h-6" alt="Twitter" />
-        </div>
+    <div class="faq-item bg-white rounded-2xl shadow-md border-2 border-black p-4 transition-all duration-300">
+      <button class="w-full flex justify-between items-center font-semibold text-left text-md text-black toggle-btn">
+        <span>Why Millets?</span>
+        <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div class="faq-content mt-4 text-sm text-gray-700 hidden">
+        Millets are ancient super grains packed with nutrients. They’re high in fiber, have a low glycemic index, support gut health, and are eco-friendly crops that require less water to grow.
       </div>
     </div>
-    <p class="text-center text-xs mt-10 text-gray-700">© 2025 Apeato. All rights reserved.</p>
-  </footer>
 
+    <div class="faq-item bg-white rounded-2xl shadow-md border-2 border-black p-4 transition-all duration-300">
+      <button class="w-full flex justify-between items-center font-semibold text-left text-md text-black toggle-btn">
+        <span>Do Apeato Products Contain Added Sugars Or Preservatives?</span>
+        <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div class="faq-content mt-4 text-sm text-gray-700 hidden">
+        Absolutely not! All Apeato products are free from refined sugar and artificial preservatives. We believe in pure, clean, and honest nutrition.
+      </div>
+    </div>
+
+    <div class="faq-item bg-white rounded-2xl shadow-md border-2 border-black p-4 transition-all duration-300">
+      <button class="w-full flex justify-between items-center font-semibold text-left text-md text-black toggle-btn">
+        <span>Are Apeato Products Safe For Children?</span>
+        <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div class="faq-content mt-4 text-sm text-gray-700 hidden">
+        Yes. Our products are crafted with clean ingredients and no harmful additives, making them perfectly suitable for children and even toddlers.
+      </div>
+    </div>
+
+    <div class="faq-item bg-white rounded-2xl shadow-md border-2 border-black p-4 transition-all duration-300">
+      <button class="w-full flex justify-between items-center font-semibold text-left text-md text-black toggle-btn">
+        <span>How Should I Store Apeato Products?</span>
+        <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div class="faq-content mt-4 text-sm text-gray-700 hidden">
+        Store in a cool, dry place away from sunlight. Keep the packs sealed after use, and consume within 2–3 weeks of opening for best taste and texture.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- JavaScript for toggle behavior -->
+<script>
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const parent = this.closest('.faq-item');
+      const content = parent.querySelector('.faq-content');
+
+      document.querySelectorAll('.faq-content').forEach(el => {
+        if (el !== content) {
+          el.classList.add('hidden');
+          el.parentElement.classList.remove('bg-[#fff7fa]');
+          el.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
+        }
+      });
+
+      content.classList.toggle('hidden');
+      parent.classList.toggle('bg-[#fff7fa]');
+      this.querySelector('svg').classList.toggle('rotate-180');
+    });
+  });
+</script>
+
+
+
+
+ <!-- FOOTER -->
+<footer class="bg-pink-500 text-white py-10 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+
+    <!-- Brand + Mission -->
+    <div>
+      <img src="apeato logo.png" class="h-10 mb-4" alt="Apeato Logo">
+      <p class="text-sm">
+        Apeato is on a mission to redefine healthy eating in India by making millet-based products accessible, delicious, and part of everyday life.
+      </p>
+
+      <!-- Social Media Icons -->
+      <div class="flex space-x-4 mt-4">
+        <a href="https://m.facebook.com/61574104522574/" target="_blank" aria-label="Facebook"
+           class="text-white text-xl hover:text-[#4267B2] transition-all duration-300 hover:scale-125">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/apeato-a8589b318/" target="_blank" aria-label="LinkedIn"
+           class="text-white text-xl hover:text-[#0A66C2] transition-all duration-300 hover:scale-125">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com/apeato.official?igsh=MTFyOTVhbmhhejQ3eg%3D%3D" target="_blank" aria-label="Instagram"
+           class="text-white text-xl hover:text-[#C13584] transition-all duration-300 hover:scale-125">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+
+
+
+
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="font-bold mb-3 text-white">Quick Links</h4>
+      <ul class="text-sm space-y-2">
+        <li class="hover:text-black transition">Shipping & Delivery</li>
+        <li class="hover:text-black transition">Terms & Conditions</li>
+        <li class="hover:text-black transition">Privacy Policy</li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h4 class="font-bold mb-3 text-white">Contact</h4>
+      <p>📞 <a href="tel:+919411509375" class="hover:underline">+91 94115 09375</a></p>
+      <p>📧 <a href="mailto:sales@apeato.com" class="hover:underline">sales@apeato.com</a></p>
+      <p>📧 <a href="mailto:info@apeato.com" class="hover:underline">info@apeato.com</a></p>
+      <p class="text-sm mt-2">Available Monday–Saturday, 10AM – 6PM</p>
+    </div>
+  </div>
 </body>
 </html>
