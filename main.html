@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Apeato Header</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="m-0 p-0 bg-white">
+
+  <!-- Header Top Bar -->
+  <header class="bg-[#FDBA12] flex items-center justify-between px-8 py-4 shadow-md">
+    <!-- Logo -->
+   <div class="flex items-center space-x-2">
+  <img src="apeato logo.png" alt="logo" >
+  
+</div>
+
+
+    <!-- Icons and Login -->
+    <div class="flex items-center space-x-6">
+      <i class="fas fa-search text-white text-lg cursor-pointer hover:scale-110 transition-transform"></i>
+      <i class="fas fa-user text-white text-lg cursor-pointer hover:scale-110 transition-transform"></i>
+
+      <div class="relative">
+        <i class="fas fa-lock text-white text-lg cursor-pointer hover:scale-110 transition-transform"></i>
+        <span class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">3</span>
+      </div>
+
+      <!-- Login Button -->
+      <button class="bg-white text-[#EF233C] font-semibold px-4 py-2 rounded-full flex items-center space-x-2 hover:shadow-lg hover:scale-105 transition">
+        <i class="fas fa-sign-in-alt"></i>
+        <span>LOGIN</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation Menu Bar -->
+  <nav class="bg-[#FDBA12] -mt-1 border-t border-white shadow-sm">
+    <ul class="flex justify-center space-x-12 py-2 text-white font-semibold text-sm tracking-wide">
+      <li class="text-[#EF233C] relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-[#EF233C]">
+        HOME
+      </li>
+      <li class="relative cursor-pointer hover:text-[#EF233C] transition-all duration-200 hover:after:content-[''] hover:after:absolute hover:after:-bottom-1 hover:after:left-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-[#EF233C]">
+        PRODUCT
+      </li>
+      <li class="relative cursor-pointer hover:text-[#EF233C] transition-all duration-200 hover:after:content-[''] hover:after:absolute hover:after:-bottom-1 hover:after:left-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-[#EF233C]">
+        ABOUT US
+      </li>
+      <li class="relative cursor-pointer hover:text-[#EF233C] transition-all duration-200 hover:after:content-[''] hover:after:absolute hover:after:-bottom-1 hover:after:left-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-[#EF233C]">
+        CONTACT
+      </li>
+      <li class="relative cursor-pointer hover:text-[#EF233C] transition-all duration-200 hover:after:content-[''] hover:after:absolute hover:after:-bottom-1 hover:after:left-0 hover:after:w-full hover:after:h-[2px] hover:after:bg-[#EF233C]">
+        BLOG
+      </li>
+    </ul>
+  </nav>
+
+</body>
+</html>

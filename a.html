@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Apeato – Millet Magic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Fredoka', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#FFF1E8] text-[#111]">
+
+  <!-- NAVBAR -->
+  <header class="bg-yellow-400 sticky top-0 z-50 px-6 py-4 shadow-md">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="apeatologo.png" class="h-10" alt="Apeato Logo">
+        <span class="text-white text-xl font-extrabold">APEATO</span>
+      </div>
+
+      <!-- Menu -->
+      <nav class="hidden md:flex items-center space-x-6 text-white font-semibold text-sm">
+        <a href="#" class="text-pink-600 underline">HOME</a>
+        <a href="#">PRODUCT</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">CONTACT</a>
+        <a href="#">BLOG</a>
+      </nav>
+
+      <!-- Icons -->
+      <div class="flex items-center space-x-4">
+        <img src="search.png" class="h-5" alt="Search">
+        <img src="user.png" class="h-5" alt="User">
+        <div class="relative">
+          <img src="cart.png" class="h-5" alt="Cart">
+          <span class="absolute -top-2 -right-2 text-xs bg-pink-600 text-white px-1 rounded-full">3</span>
+        </div>
+        <button class="bg-white text-pink-600 font-bold px-4 py-1 rounded-full flex items-center space-x-1">
+          <img src="login-icon.png" class="h-4" />
+          <span>LOGIN</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="px-6 py-16 bg-[#FFF1E8] max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center">
+    <div class="max-w-xl space-y-6">
+      <h1 class="text-5xl font-extrabold leading-tight">
+        TASTE THE<br>
+        <span class="text-yellow-500">GOODNESS</span><br>
+        <span class="text-pink-600">TODAY</span>
+      </h1>
+      <p class="text-sm text-gray-700 max-w-md">Nutritious millet snacks that delight your taste buds every day.</p>
+    </div>
+    <div class="relative mt-10 lg:mt-0">
+      <img src="hero.png" alt="Hero" class="h-64 lg:h-72">
+      <h2 class="absolute -right-16 top-1/3 rotate-90 text-6xl text-pink-500 font-extrabold">APEATO</h2>
+    </div>
+  </section>
+
+  <!-- FEATURE INFO BAR -->
+  <div class="bg-pink-500 text-white py-4 text-sm font-semibold flex flex-wrap justify-center gap-6 px-4">
+    <span>NO ARTIFICIAL COLOURS</span>
+    <span>NO ADDED PRESERVATIVES</span>
+    <span>100% NATURAL</span>
+    <span>NO ADDED SUGAR</span>
+    <span>GLUTEN FREE</span>
+  </div>
+
+  <!-- TAGLINE + FEATURES -->
+  <section class="py-10 text-center bg-[#fffaf3]">
+    <h2 class="text-2xl font-bold mb-2">APEATO</h2>
+    <p class="text-sm">PAHAD SE GHAR TAK</p>
+    <div class="mt-6 flex justify-center gap-12 text-xs font-semibold">
+      <div>
+        <img src="truck.png" class="h-6 mx-auto mb-1">
+        FREE SHIPPING FROM ₹499
+      </div>
+      <div>
+        <img src="money.png" class="h-6 mx-auto mb-1">
+        100% MONEY BACK
+      </div>
+      <div>
+        <img src="support.png" class="h-6 mx-auto mb-1">
+        SUPPORT 24/7
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="bg-[#fff6e8] py-12 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-2">TESTIMONIAL</h2>
+    <p class="font-semibold text-gray-700">“What Our Clients Say”</p>
+    <p class="text-sm text-gray-600 mb-6">Real feedback from the people who matter most – our users and partners.</p>
+    <div class="grid md:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white rounded-xl p-4 shadow">
+        <img src="Ramesh K., Hyderabad - testimonial.png" class="h-10 w-10 rounded-full mx-auto mb-2">
+        <p class="text-sm">“Absolutely love the taste and health benefits. Apeato changed my routine!”</p>
+        <p class="font-bold mt-2">— Ramesh K.</p>
+      </div>
+      <div class="flex justify-center items-center">
+        <img src="testimonal pic 1.png" class="h-40 rounded shadow-lg" />
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow">
+        <img src="Anjali S., Mumbai -testimonial.png" class="h-10 w-10 rounded-full mx-auto mb-2">
+        <p class="text-sm">“Perfect snacks for my kids and me. Highly recommended.”</p>
+        <p class="font-bold mt-2">— Anjali S.</p>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+      <img src="testimonal pic 2.png" class="rounded-lg h-36" />
+      <div class="bg-white rounded-xl p-4 shadow text-left max-w-xs">
+        <img src="Fatima M., Bengaluru - testimonial.png" class="h-10 w-10 rounded-full mb-2">
+        <p class="text-sm">“My kids love the ragi chips. Thank you for creating this!”</p>
+        <p class="font-bold mt-2">— Fatima M.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-pink-500 text-white py-10 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+      <div>
+        <img src="logo.png" class="h-10 mb-4">
+        <p class="text-sm">
+          Apeato is on a mission to redefine healthy eating in India by making millet-based products accessible, delicious, and part of everyday life.
+        </p>
+        <div class="flex space-x-4 mt-4">
+          <img src="facebook.png" class="h-5">
+          <img src="linkedin.png" class="h-5">
+          <img src="instagram.png" class="h-5">
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold mb-3">Quick Links</h4>
+        <ul class="text-sm space-y-2">
+          <li>Shipping & Delivery</li>
+          <li>Terms & Conditions</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-3">Contact</h4>
+        <p>📞 +91 94115 09375</p>
+        <p>📧 sales@apeato.com</p>
+        <p>📧 info@apeato.com</p>
+        <p class="text-sm mt-2">Available Monday–Saturday, 10AM – 6PM</p>
+      </div>
+    </div>
+    <div class="text-center mt-10 text-xs">
+      <p>Developed by Apeato • Copyright © 2025</p>
+    </div>
+  </footer>
+
+</body>
+</html>

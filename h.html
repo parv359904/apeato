@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Apeato - Taste the Goodness</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Fredoka', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#fff1e8] text-[#111]">
+
+  <!-- NAVBAR -->
+  <nav class="bg-yellow-400 px-6 py-3 flex items-center justify-between">
+    <div class="flex items-center">
+      <img src="1.png" alt="Logo" class="h-10 mr-2" />
+      <span class="text-white font-bold text-xl">APEATO</span>
+    </div>
+    <ul class="hidden md:flex space-x-6 font-semibold text-white">
+      <li class="text-pink-600 underline">HOME</li>
+      <li>PRODUCT</li>
+      <li>ABOUT US</li>
+      <li>CONTACT</li>
+      <li>BLOG</li>
+    </ul>
+    <div class="flex space-x-4 items-center">
+      <img src="search-icon.png" class="h-5" />
+      <img src="user-icon.png" class="h-5" />
+      <img src="cart-icon.png" class="h-5" />
+      <button class="bg-white text-pink-600 px-4 py-1 rounded-full font-bold">Login</button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="flex flex-col md:flex-row justify-between items-center px-10 py-16 bg-[#FFF1E8]">
+    <div class="mb-8 md:mb-0">
+      <h1 class="text-5xl font-bold leading-tight">
+        TASTE THE <br />
+        <span class="text-yellow-500">GOODNESS</span> <br />
+        <span class="text-pink-600">TODAY</span>
+      </h1>
+    </div>
+    <div class="relative">
+      <img src="2.png" alt="Product Image" class="h-64" />
+      <h2 class="absolute right-[-60px] top-[120px] rotate-90 text-6xl font-extrabold text-pink-500">APEATO</h2>
+    </div>
+  </section>
+
+  <!-- INFO STRIP -->
+  <div class="bg-pink-500 text-white flex flex-wrap justify-center items-center text-sm font-semibold py-3 gap-3">
+    <div class="px-3">NO ARTIFICIAL COLOURS</div>
+    <div class="px-3">NO ADDED PRESERVATIVES</div>
+    <div class="px-3">100% NATURAL</div>
+    <div class="px-3">NO ADDED SUGAR</div>
+    <div class="px-3">GLUTEN FREE</div>
+  </div>
+
+  <!-- TAGLINE & ICONS -->
+  <div class="text-center py-8 bg-[#fff7ee]">
+    <h3 class="text-2xl font-bold mb-4">APEATO <br /> <span class="text-sm font-normal">PAHAD SE GHAR THAK</span></h3>
+    <div class="flex justify-center gap-8 mt-6 text-xs font-semibold">
+      <div class="flex flex-col items-center">
+        <img src="truck-icon.png" class="h-6 mb-1" />
+        FREE SHIPPING <br /> FROM ₹499
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="money-icon.png" class="h-6 mb-1" />
+        100% MONEY BACK
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="support-icon.png" class="h-6 mb-1" />
+        SUPPORT 24/7
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="bg-[#fff6e8] px-6 py-10 text-center">
+    <h2 class="text-3xl font-bold mb-2">TESTIMONIAL</h2>
+    <p class="font-semibold mb-1">“What Our Clients Say”</p>
+    <p class="text-sm mb-6">‘real Feedback From The People Who Matter Most – Our User And Partners’</p>
+
+    <div class="grid md:grid-cols-3 gap-4 mb-8">
+      <div class="bg-pink-100 p-4 rounded text-left">
+        <img src="user1.png" class="h-12 w-12 rounded-full mb-2" />
+        <p>“Apeato’s Products Have Completely Changed My Breakfast Routine...”</p>
+        <p class="font-bold mt-2">— Ramesh K., Hyderabad</p>
+      </div>
+      <div class="flex justify-center items-center">
+        <img src="award.png" class="h-40 rounded" />
+      </div>
+      <div class="bg-pink-100 p-4 rounded text-left">
+        <img src="user2.png" class="h-12 w-12 rounded-full mb-2" />
+        <p>“I Never Thought Healthy Could Taste This Good... Absolutely Delicious.”</p>
+        <p class="font-bold mt-2">— Anjali S., Mumbai</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-4 items-center justify-center">
+      <img src="group-photo.png" class="rounded-lg h-36" />
+      <div class="bg-pink-100 p-4 rounded text-left max-w-sm">
+        <img src="user3.png" class="h-12 w-12 rounded-full mb-2" />
+        <p>“My Kids Love The Ragi Pahadi Hot Tadka Chips... Highly Recommended.”</p>
+        <p class="font-bold mt-2">— Fatima M., Bengaluru</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-pink-500 text-white px-6 py-10">
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- About -->
+      <div>
+        <img src="1.png" class="h-10 mb-4" />
+        <p class="text-sm">
+          Apeato Is More Than Just A Brand—It’s A Movement Towards A Healthier, More Vibrant Future.
+          As A Brand, Our Mission Is To Redefine Healthy Eating In India By Making Millet-Based
+          Products Accessible, Delicious, And A Part Of Everyday Life.
+        </p>
+        <div class="flex gap-4 mt-4">
+          <img src="facebook-icon.png" class="h-6" />
+          <img src="linkedin-icon.png" class="h-6" />
+          <img src="insta-icon.png" class="h-6" />
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="text-lg font-bold mb-3">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li>Shipping & Delivery</li>
+          <li>Terms And Conditions</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-lg font-bold mb-3">Contact</h3>
+        <p>Phone : +91 94115 09375</p>
+        <p>Gmail : Sales@Apeato.Com<br />Info@Apeato.Com</p>
+        <p class="mt-2 text-sm">We Try To Respond Within 48 Hours.</p>
+        <p class="text-sm">Available Monday To Saturday; 10am - 6:00pm.</p>
+      </div>
+    </div>
+    <div class="text-center mt-6 text-sm">
+      <p>Developed By Apeato</p>
+      <p>Copyright © 2025 Apeato</p>
+    </div>
+  </footer>
+
+
+
+  
+</body>
+</html>

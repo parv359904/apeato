@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namumkin – A Roman Urdu Novel by Parv</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Noto+Nastaliq+Urdu&family=Dancing+Script&family=Roboto+Slab&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+  
+  <!-- FontAwesome Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(to bottom, #0d0d1a, #1a1333);
+      color: #f5f5f5;
+    }
+    .urdu { font-family: 'Noto Nastaliq Urdu', serif; }
+    .callig { font-family: 'Dancing Script', cursive; }
+    .slab { font-family: 'Roboto Slab', serif; }
+    .glow {
+      text-shadow: 0 0 10px #f39c12, 0 0 20px #d35400;
+    }
+    .float-urdu {
+      animation: floatPoem 6s ease-in-out infinite;
+    }
+    @keyframes floatPoem {
+      0%, 100% { transform: translateY(0); opacity: 0.9; }
+      50% { transform: translateY(-15px); opacity: 1; }
+    }
+    #anti-screenshot {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.98);
+      z-index: 9999;
+      display: none;
+    }
+    .section-divider {
+      width: 80px;
+      height: 3px;
+      background: #f1c40f;
+      margin: 1rem auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Anti-Screenshot Shield -->
+  <div id="anti-screenshot"></div>
+
+  <!-- Header/Navbar -->
+  <header class="fixed w-full z-30 bg-[#1b1b2f] shadow-xl py-4 px-8 flex justify-between items-center">
+    <div class="text-3xl callig glow">Namumkin</div>
+    <nav class="flex space-x-6 text-sm md:text-base">
+      <a href="#chapters" class="hover:text-yellow-400 transition">Chapters</a>
+      <a href="#author" class="hover:text-yellow-400 transition">Author</a>
+      <a href="#reviews" class="hover:text-yellow-400 transition">Reviews</a>
+      <a href="#contact" class="hover:text-yellow-400 transition">Contact</a>
+      <button id="loginBtn" class="border border-yellow-400 px-3 py-1 rounded hover:bg-yellow-400 hover:text-black transition">Login</button>
+      <button id="signupBtn" class="bg-yellow-400 text-black px-4 py-1 rounded hover:bg-yellow-500 transition">Sign Up</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="h-screen flex flex-col justify-center text-center pt-20 relative">
+    <div class="absolute inset-0 bg-[url('bg-folk.jpg')] bg-cover opacity-10 z-0"></div>
+    <div class="z-10">
+      <h1 class="text-6xl md:text-8xl glow callig" data-aos="fade-down">Namumkin</h1>
+      <p class="mt-4 text-xl italic tracking-wide slab" data-aos="fade-up">
+        Ek dastaan jahan ishq aur haqiqat ki lakeer dhundhli ho jaati hai...
+      </p>
+      <div class="mt-12">
+        <a href="#chapters" class="bg-yellow-400 text-black px-6 py-3 rounded-full shadow-lg hover:bg-yellow-500 transition">Read Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Shayari -->
+  <section class="py-12">
+    <p class="text-xl urdu float-urdu text-yellow-300 text-center max-w-3xl mx-auto" data-aos="zoom-in">
+      "Zindagi likhi thi khaali, Namumkin ne lafzon se bhar di."
+    </p>
+  </section>
+
+  <!-- Chapters Section -->
+  <section id="chapters" class="py-16 px-6 md:px-20 bg-[#111]">
+    <h2 class="text-4xl glow text-center mb-6">Chapters</h2>
+    <div class="section-divider"></div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
+      <!-- Sample Chapter Card -->
+      <div class="bg-[#1f1f3f] p-6 rounded-xl shadow-lg hover:scale-105 transition">
+        <h3 class="text-2xl font-semibold mb-2">Chapter 1: Raat ka Sheher</h3>
+        <p class="text-gray-300 mb-4">Jahan har chehra ek kahani hai, aur har kahani mein dard chhupa hai...</p>
+        <button class="bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-2 rounded-full">Buy ₹49</button>
+      </div>
+      <!-- More chapters can follow similarly -->
+    </div>
+  </section>
+
+  <!-- Author Section -->
+  <section id="author" class="bg-[#0d0d1a] py-20 px-6 text-center">
+    <h2 class="text-3xl glow mb-4">About the Author</h2>
+    <div class="section-divider"></div>
+    <p class="mt-4 max-w-3xl mx-auto text-gray-300">
+      Parv, a dreamer and storyteller, merges folk legends with the bittersweet taste of reality. Namumkin is not just a novel – it is a mirror of forgotten emotions.
+    </p>
+    <div class="mt-8">
+      <img src="author.jpg" class="w-40 h-40 rounded-full border-4 border-yellow-400 mx-auto shadow-md">
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews" class="py-20 px-6 md:px-20 bg-[#121232]">
+    <h2 class="text-3xl glow text-center mb-6">Reader Reviews</h2>
+    <div class="section-divider"></div>
+    <div class="mt-10 grid md:grid-cols-3 gap-8">
+      <blockquote class="bg-[#1e1e30] p-6 rounded-xl shadow-lg">
+        <p class="italic">“Har lafz mein dard tha, har chapter mein meri kahani thi.”</p>
+        <footer class="mt-4 text-right">– Ayesha R.</footer>
+      </blockquote>
+      <blockquote class="bg-[#1e1e30] p-6 rounded-xl shadow-lg">
+        <p class="italic">“Namumkin ne mujhe rula diya... phir muskurana sikhaya.”</p>
+        <footer class="mt-4 text-right">– Hassan K.</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-6 text-center bg-black">
+    <h2 class="text-3xl glow mb-6">Get in Touch</h2>
+    <div class="section-divider"></div>
+    <form class="mt-6 max-w-xl mx-auto">
+      <input type="text" placeholder="Your Name" class="w-full mb-4 p-3 rounded bg-[#1f1f1f] text-white">
+      <input type="email" placeholder="Email" class="w-full mb-4 p-3 rounded bg-[#1f1f1f] text-white">
+      <textarea placeholder="Your Message" class="w-full mb-4 p-3 h-32 rounded bg-[#1f1f1f] text-white"></textarea>
+      <button type="submit" class="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-2 rounded">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#1b1b2f] py-6 px-6 text-center text-sm text-gray-400">
+    &copy; 2025 Namumkin | Written by Parv | All rights reserved.
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <!-- Anti Screenshot -->
+  <script>
+    document.addEventListener('keydown', e => {
+      if (e.key === 'PrintScreen') {
+        document.getElementById('anti-screenshot').style.display = 'block';
+        setTimeout(() => {
+          document.getElementById('anti-screenshot').style.display = 'none';
+        }, 1500);
+      }
+    });
+  </script>
+</body>
+</html>
